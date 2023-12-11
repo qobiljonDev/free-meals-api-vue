@@ -4,7 +4,7 @@
       <input
         type="search"
         v-model="keyword"
-        class="rounded border-2 border-gray-200 w-full"
+        class="rounded border-2 border-gray-200 w-full dark:bg-slate-700 dark:text-white dark:border-transparent"
         :placeholder="$t('search_meals')"
         @change="searchMeals"
       />

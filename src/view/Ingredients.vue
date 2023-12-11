@@ -4,7 +4,7 @@
     <input
       type="search"
       v-model="keyword"
-      class="rounded border-2 border-gray-200 w-full mb-4"
+      class="rounded border-2 mb-4 border-gray-200 w-full dark:bg-slate-700 dark:text-white dark:border-transparent"
       :placeholder="$t('search_meals')"
     />
     <router-link
@@ -14,10 +14,10 @@
         name: 'byIngredient',
         params: { ingredient: ingredient.strIngredient }
       }"
-      class="block bg-white shadow mb-3 rounded p-4"
+      class="block bg-white shadow mb-3 rounded p-4 dark:bg-slate-900"
     >
-      <h3 class="text-2xl font-bold mb-2">{{ ingredient.strIngredient }}</h3>
-      <p>{{ ingredient.strDescription }}</p>
+      <h3 class="text-2xl font-bold mb-2 dark:text-gray-100">{{ ingredient.strIngredient }}</h3>
+      <p class="dark:text-gray-400">{{ ingredient.strDescription }}</p>
     </router-link>
   </div>
 </template>

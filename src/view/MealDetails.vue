@@ -5,20 +5,33 @@
     </h1>
     <img :src="meal.strMealThumb" :alt="meal.strMealThumb" class="max-w-[100%] w-full rounded" />
     <div class="grid grid-cols-1 md:grid-cols-2 py-2 text-lg">
-      <div><strong class="font-bold text-orange-400">Category:</strong>{{ meal.strCategory }}</div>
-      <div><strong class="font-bold text-orange-400">Area:</strong>{{ meal.strArea }}</div>
-      <div class="md:mt-2"><strong class="font-bold text-orange-400">Tags:</strong>{{ meal.strTags }}</div>
+      <div>
+        <strong class="font-bold text-orange-400">Category:</strong>
+        <span class="dark:text-white ml-2">{{ meal.strCategory }}</span>
+      </div>
+      <div>
+        <strong class="font-bold text-orange-400">Area:</strong>
+        <span class="dark:text-white ml-2">{{ meal.strArea }}</span>
+      </div>
+      <div class="md:mt-2">
+        <strong class="font-bold text-orange-400">Tags:</strong>
+        <span class="dark:text-white ml-2">{{ meal.strTags }}</span>
+      </div>
     </div>
     <div class="my-3">
       <h3 class="font-bold text-orange-400 mb-2 text-xl">Instructions</h3>
-      {{ meal.strInstructions }}
+      <p class="dark:text-white">
+        {{ meal.strInstructions }}
+      </p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2">
       <div>
         <h2 class="text-2xl font-semibold mb-3 text-orange-400">{{ $t("ingredient") }}</h2>
         <ul>
           <template v-for="(el, ind) of new Array(20)" :key="ind">
-            <li v-if="meal[`strIngredient${ind + 1}`]">{{ ind + 1 }}. {{ meal[`strIngredient${ind + 1}`] }}</li>
+            <li v-if="meal[`strIngredient${ind + 1}`]" class="dark:text-white">
+              {{ ind + 1 }}. {{ meal[`strIngredient${ind + 1}`] }}
+            </li>
           </template>
         </ul>
       </div>
@@ -26,7 +39,7 @@
         <h2 class="text-2xl font-semibold mb-2 text-orange-400">Measures</h2>
         <ul>
           <template v-for="(el, ind) of new Array(20)" :key="ind">
-            <li v-if="meal[`strMeasure${ind + 1}`]">
+            <li v-if="meal[`strMeasure${ind + 1}`]" class="dark:text-white">
               {{ meal[`strMeasure${ind + 1}`] }}
             </li>
           </template>
