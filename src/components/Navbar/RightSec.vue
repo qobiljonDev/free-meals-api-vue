@@ -107,6 +107,7 @@ function setLocale(lng) {
 
   const newPath = `/${lng}${currentPathWithoutLang}`
 
+  window.reload()
   router.push({ path: newPath })
 }
 </script>
